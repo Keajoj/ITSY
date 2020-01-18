@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using ITSY.Models;
 
 namespace ITSY.Controllers
 {
@@ -34,8 +35,12 @@ namespace ITSY.Controllers
         {
             try
             {
+                TicketViewModel ticketViewModel = new TicketViewModel(collection);
                 // TODO: Add insert logic here
-
+                //for (int i = 0; i < collection.count(); i++)
+                //{
+                //    console.writeline(collection.elementat(i).tostring());
+                //}
                 return RedirectToAction(nameof(Index));
             }
             catch

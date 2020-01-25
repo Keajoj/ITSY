@@ -1,0 +1,60 @@
+﻿@model ITSY.Models.Ticket
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Ticket</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.subject)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.subject)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.priority)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.priority)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.issueType)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.issueType)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.openDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.openDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.description)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.description)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.worklog)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.worklog)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.open)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.open)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

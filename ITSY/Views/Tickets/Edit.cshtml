@@ -12,41 +12,47 @@
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="id" />
+            <input type="hidden" asp-for="Id" />
             <div class="form-group">
-                <label asp-for="subject" class="control-label"></label>
-                <input asp-for="subject" class="form-control" />
-                <span asp-validation-for="subject" class="text-danger"></span>
+                <label asp-for="Subject" class="control-label"></label>
+                <input asp-for="Subject" class="form-control" />
+                <span asp-validation-for="Subject" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="priority" class="control-label"></label>
-                <input asp-for="priority" class="form-control" />
-                <span asp-validation-for="priority" class="text-danger"></span>
+                <label asp-for="Priority" class="control-label"></label>
+                <select asp-for="Priority" asp-items="Html.GetEnumSelectList<ITSY.Models.Ticket.PriorityOptions>()" class="form-control">
+                    <option selected="selected" value="">Please select</option>
+                </select>
+                <span asp-validation-for="Priority" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="issueType" class="control-label"></label>
-                <input asp-for="issueType" class="form-control" />
-                <span asp-validation-for="issueType" class="text-danger"></span>
+                <label asp-for="IssueType" class="control-label"></label>
+                <select asp-for="IssueType" asp-items="Html.GetEnumSelectList<ITSY.Models.Ticket.IssueTypeOptions>()" class="form-control">
+                    <option selected="selected" value="">Please select</option>
+                </select>
+                <span asp-validation-for="IssueType" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="openDate" class="control-label"></label>
-                <input asp-for="openDate" class="form-control" />
-                <span asp-validation-for="openDate" class="text-danger"></span>
+                <label asp-for="OpenDate" class="control-label"></label>
+                <input asp-for="OpenDate" class="form-control" />
+                <span asp-validation-for="OpenDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="description" class="control-label"></label>
-                <input asp-for="description" class="form-control" />
-                <span asp-validation-for="description" class="text-danger"></span>
+                <label asp-for="CloseDate" class="control-label"></label>
+                <input asp-for="CloseDate" class="form-control" />
+                <span asp-validation-for="CloseDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="worklog" class="control-label"></label>
-                <input asp-for="worklog" class="form-control" />
-                <span asp-validation-for="worklog" class="text-danger"></span>
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
             </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="open" /> @Html.DisplayNameFor(model => model.open)
-                </label>
+            <div class="form-group">
+                <label asp-for="Status" class="control-label"></label>
+                <select asp-for="Status" asp-items="Html.GetEnumSelectList<ITSY.Models.Ticket.StatusOptions>()" class="form-control">
+                    <option selected="selected" value="">Please select</option>
+                </select>
+                <span asp-validation-for="Status" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />

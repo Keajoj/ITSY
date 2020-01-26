@@ -34,7 +34,7 @@ namespace ITSY.Controllers
             }
 
             var ticket = await _context.Ticket
-                .FirstOrDefaultAsync(m => m.id == id);
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (ticket == null)
             {
                 return NotFound();
@@ -54,7 +54,7 @@ namespace ITSY.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("id,subject,priority,issueType,openDate,description,worklog,open")] Ticket ticket)
+        public async Task<IActionResult> Create([Bind("Id,Subject,Priority,IssueType,OpenDate,CloseDate,Description,Status")] Ticket ticket)
         {
             if (ModelState.IsValid)
             {
@@ -86,9 +86,9 @@ namespace ITSY.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("id,subject,priority,issueType,openDate,description,worklog,open")] Ticket ticket)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Subject,Priority,IssueType,OpenDate,CloseDate,Description,Status")] Ticket ticket)
         {
-            if (id != ticket.id)
+            if (id != ticket.Id)
             {
                 return NotFound();
             }
@@ -102,7 +102,7 @@ namespace ITSY.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!TicketExists(ticket.id))
+                    if (!TicketExists(ticket.Id))
                     {
                         return NotFound();
                     }
@@ -125,7 +125,7 @@ namespace ITSY.Controllers
             }
 
             var ticket = await _context.Ticket
-                .FirstOrDefaultAsync(m => m.id == id);
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (ticket == null)
             {
                 return NotFound();
@@ -147,7 +147,7 @@ namespace ITSY.Controllers
 
         private bool TicketExists(int id)
         {
-            return _context.Ticket.Any(e => e.id == id);
+            return _context.Ticket.Any(e => e.Id == id);
         }
     }
 }

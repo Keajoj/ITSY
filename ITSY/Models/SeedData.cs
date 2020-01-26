@@ -21,43 +21,43 @@ namespace ITSY.Models
                 context.Ticket.AddRange(
                     new Ticket
                     {
-                        subject = "UI Glitch",
-                        priority = "Low",
-                        issueType = "Bug",
-                        openDate = DateTime.Parse("2020-1-21"),
-                        description = "The UI sometimes doesn't look right.",
-                        worklog = "Ticket created by JThomas.",
-                        open = true
+                        Subject = "UI Glitch",
+                        Priority = Ticket.PriorityOptions.Low,
+                        IssueType = Ticket.IssueTypeOptions.Bug,
+                        OpenDate = DateTime.Parse("2020-1-21"),
+                        CloseDate = null,
+                        Description = "The UI sometimes doesn't look right.",
+                        Status = Ticket.StatusOptions.Open
                     },
                     new Ticket
                     {
-                        subject = "Incorrect Date/Time",
-                        priority = "Medium",
-                        issueType = "Bug",
-                        openDate = DateTime.Parse("2020-1-22"),
-                        description = "Date and Time showing dates far into the cosmic future.",
-                        worklog = "Ticket created by MMendez.",
-                        open = true
+                        Subject = "Incorrect Date/Time",
+                        Priority = Ticket.PriorityOptions.Medium,
+                        IssueType = Ticket.IssueTypeOptions.Bug,
+                        OpenDate = DateTime.Parse("2020-1-22"),
+                        CloseDate = null,
+                        Description = "Date and Time showing dates far into the cosmic future.",
+                        Status = Ticket.StatusOptions.Open
                     },
                     new Ticket
                     {
-                        subject = "Out of Dog Food",
-                        priority = "High",
-                        issueType = "Bug",
-                        openDate = DateTime.Parse("2020-1-23"),
-                        description = "help i am completely out of food i haven't eaten in MINUTES please help me",
-                        worklog = "Ticket created by OMendez.",
-                        open = true
+                        Subject = "Out of Dog Food",
+                        Priority = Ticket.PriorityOptions.High,
+                        IssueType = Ticket.IssueTypeOptions.Feature,
+                        OpenDate = DateTime.Parse("2020-1-23"),
+                        CloseDate = null,
+                        Description = "help i am completely out of food i haven't eaten in MINUTES please help me",
+                        Status = Ticket.StatusOptions.Open
                     },
                     new Ticket
                     {
-                        subject = "Database Removal",
-                        priority = "Critical",
-                        issueType = "Bug",
-                        openDate = DateTime.Parse("2020-1-24"),
-                        description = "The entire database has been deleted. God help us.",
-                        worklog = "Ticket created by CWinchester.",
-                        open = true
+                        Subject = "Database Removal",
+                        Priority = Ticket.PriorityOptions.Critical,
+                        IssueType = Ticket.IssueTypeOptions.Other,
+                        OpenDate = DateTime.Parse("2020-1-24"),
+                        CloseDate = null,
+                        Description = "The entire database has been deleted. God help us.",
+                        Status = Ticket.StatusOptions.Open
                     }
                 );
                 context.SaveChanges();

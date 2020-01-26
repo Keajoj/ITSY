@@ -11,19 +11,19 @@ namespace ITSY.Migrations
                 name: "Ticket",
                 columns: table => new
                 {
-                    id = table.Column<int>(nullable: false)
+                    Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    subject = table.Column<string>(nullable: true),
-                    priority = table.Column<string>(nullable: true),
-                    issueType = table.Column<string>(nullable: true),
-                    openDate = table.Column<DateTime>(nullable: false),
-                    description = table.Column<string>(nullable: true),
-                    worklog = table.Column<string>(nullable: true),
-                    open = table.Column<bool>(nullable: false)
+                    Subject = table.Column<string>(nullable: true),
+                    Priority = table.Column<int>(nullable: false),
+                    IssueType = table.Column<int>(nullable: false),
+                    OpenDate = table.Column<DateTime>(nullable: false),
+                    CloseDate = table.Column<DateTime>(nullable: true),
+                    Description = table.Column<string>(nullable: true),
+                    Status = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Ticket", x => x.id);
+                    table.PrimaryKey("PK_Ticket", x => x.Id);
                 });
         }
 

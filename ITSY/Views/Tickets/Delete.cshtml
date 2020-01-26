@@ -12,51 +12,51 @@
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.subject)
+            @Html.DisplayNameFor(model => model.Subject)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.subject)
+            @Html.DisplayFor(model => model.Subject)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.priority)
+            @Html.DisplayNameFor(model => model.Priority)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.priority)
+            @Html.DisplayFor(model => model.Priority)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.issueType)
+            @Html.DisplayNameFor(model => model.IssueType)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.issueType)
+            @Html.DisplayFor(model => model.IssueType)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.openDate)
+            @Html.DisplayNameFor(model => model.OpenDate)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.openDate)
+            @Html.DisplayFor(model => model.OpenDate)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.description)
+            @Html.DisplayNameFor(model => model.CloseDate)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.description)
+            @Html.DisplayFor(model => model.CloseDate)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.worklog)
+            @Html.DisplayNameFor(model => model.Description)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.worklog)
+            @Html.DisplayFor(model => model.Description)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.open)
+            @Html.DisplayNameFor(model => model.Status)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.open)
+            @Html.DisplayFor(model => model.Status)
         </dd>
     </dl>
     
     <form asp-action="Delete">
-        <input type="hidden" asp-for="id" />
+        <input type="hidden" asp-for="Id" />
         <input type="submit" value="Delete" class="btn btn-danger" /> |
         <a asp-action="Index">Back to List</a>
     </form>

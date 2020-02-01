@@ -3,15 +3,17 @@ using System;
 using ITSY.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace ITSY.Migrations
 {
     [DbContext(typeof(ITSYContext))]
-    partial class ITSYContextModelSnapshot : ModelSnapshot
+    [Migration("20200201091136_PostgresAndIdentity")]
+    partial class PostgresAndIdentity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

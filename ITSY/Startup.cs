@@ -10,7 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using ITSY.Data;
-
+using Microsoft.AspNetCore.Identity;
 
 namespace ITSY
 {
@@ -27,8 +27,12 @@ namespace ITSY
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddRazorPages();
 
-            services.AddDbContext<ITSYContext>(options => options.UseSqlServer(Configuration.GetConnectionString("ITSYContext")));
+            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+                .AddEntityFrameworkStores<ITSYContext>();
+
+            services.AddDbContext<ITSYContext>(options => options.UseNpgsql(Configuration.GetConnectionString("ITSYContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,13 +54,16 @@ namespace ITSY
             app.UseRouting();
 
             app.UseAuthorization();
+            app.UseAuthentication();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapRazorPages();
             });
+
         }
     }
 }
